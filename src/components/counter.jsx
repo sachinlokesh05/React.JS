@@ -4,14 +4,19 @@ import { Button } from 'react-bootstrap';
 
 class Counter extends Component {
     state = { count : 0}
+
+    styles = {
+        fontSize : 20,
+        fontWeight: "bold"
+    };
     render() { 
-    return (<React.Fragment><span  className="badge badge-primary m-3" >{this.formatCount()}</span><Button variant="dark" size="md">
+    return (<React.Fragment><span style={ this.styles } className="badge badge-primary m-2" >{this.formatCount()}</span><Button variant="dark m-2 " size="md">
     Small button
   </Button></React.Fragment>);
     }
     formatCount (){
         const {count} = this.state;
-        return count === 0 ? <h5>Zero</h5> : count;
+        return count === 0 ? "Zero" : count;
     };
 }
  
