@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 // import {Alert } from 'react-bootstrap';
 
 class Counter extends Component {
-    state = { count : 3,
+    state = { count : 0,
     
         tags : ['tag1','tag2','tag3']
     
@@ -18,20 +18,29 @@ class Counter extends Component {
         return  <ul>{this.state.tags.map(tag => <li key={tag} >{tag}</li> )}</ul>
 
     }
-    handleIncrement = () => {
-        this.setState({count:this.state.count+1});   
-    }
+    handleIncrement = product => {
+        console.log(product);
+        this.setState({count:this.state.count+1});           
+    };
+
+
+    // dohandleIncrement = () => {
+    //     this.handleIncrement({id:1});
+    // }
 
     render() { 
         
     
         return (<React.Fragment>
             <span style={ {fontSize:20 }} className={this.getBadgeClasses() } >{this.formatCount()}</span>
-            <Button  onClick={this.handleIncrement} variant="dark m-2 " size="md">
-            Small button
+            <Button  
+            onClick={() => this.handleIncrement("product")} 
+            variant="dark m-2 " size="md"
+            >
+            Increment
             </Button>
-            {/* {this.state.tags.length === 0  && <Alert variant="info m-2  " > <h3>Please Create a new tags!!</h3> </Alert>} */}
-            {/* <Alert variant="danger m-2  " > {this.renderTags()} </Alert> */}
+            {/* {this.state.tags.length === 0  && <Alert variant="info m-2  " > <h3>Please Create a new tags!!</h3> </Alert>} 
+            <Alert variant="danger m-2  " > {this.renderTags()} </Alert>  */}
             
         </React.Fragment>);
     }
