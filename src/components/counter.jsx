@@ -3,11 +3,8 @@ import { Button } from 'react-bootstrap';
 // import {Alert } from 'react-bootstrap';
 
 class Counter extends Component {
-    state = { count : 0,
-    
-        tags : ['tag1','tag2','tag3'],
-    
-    }
+    state = { count : this.props.value,
+        }
     // constructor(){
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this);
@@ -29,6 +26,8 @@ class Counter extends Component {
     // }
 
     render() { 
+
+        console.log("props",this.props);
         
     
         return (<React.Fragment>
