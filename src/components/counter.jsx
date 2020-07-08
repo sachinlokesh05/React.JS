@@ -3,8 +3,8 @@ import { Button } from 'react-bootstrap';
 // import {Alert } from 'react-bootstrap';
 
 class Counter extends Component {
-    state = { count : this.props.value,
-        }
+    state = { count : this.props.value
+        };
     // constructor(){
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this);
@@ -15,9 +15,9 @@ class Counter extends Component {
         return  <ul>{this.state.tags.map(tag => <li key={tag} >{tag}</li> )}</ul>
 
     }
-    handleIncrement = product => {
-        console.log(product);
-        this.setState({count:this.state.count+1});           
+
+    handleIncrement = () => {
+        this.setState({count:this.state.count + 1});           
     };
 
 
@@ -25,10 +25,7 @@ class Counter extends Component {
     //     this.handleIncrement({id:1});
     // }
 
-    render() { 
-
-        console.log("props",this.props);
-        
+    render() {         
     
         return (<React.Fragment>
             <span style={ {fontSize:20 }} className={this.getBadgeClasses() } >{this.formatCount()}</span>
