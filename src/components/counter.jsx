@@ -25,9 +25,9 @@ class Counter extends Component {
     //     this.handleIncrement({id:1});
     // }
 
-    render() {         
-    
+    render() {                 
         return (<React.Fragment>
+            <h1>{this.props.id}</h1>
             <span style={ {fontSize:20 }} className={this.getBadgeClasses() } >{this.formatCount()}</span>
             <Button  
             onClick={() => this.handleIncrement("product")} 
