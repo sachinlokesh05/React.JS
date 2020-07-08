@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 // import {Alert } from 'react-bootstrap';
 
 class Counter extends Component {
@@ -9,17 +9,20 @@ class Counter extends Component {
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
-    renderTags(){
-        if (this.state.tags.length === 0 ) return <h3>There are no tags!</h3>;
+    // renderTags(){
+    //     if (this.state.tags.length === 0 ) return <h3>There are no tags!</h3>;
 
-        return  <ul>{this.state.tags.map(tag => <li key={tag} >{tag}</li> )}</ul>
+    //     return  <ul>{this.state.tags.map(tag => <li key={tag} >{tag}</li> )}</ul>
 
-    }
+    // }
 
     handleIncrement = () => {
         this.setState({count:this.state.count + 1});           
     };
 
+    // handleDelete = () => {
+    //     this.setState({count:this.state.count - 1}); 
+    // };
 
     // dohandleIncrement = () => {
     //     this.handleIncrement({id:1});
@@ -29,12 +32,8 @@ class Counter extends Component {
         return (<React.Fragment>
             <h1>{this.props.id}</h1>
             <span style={ {fontSize:20 }} className={this.getBadgeClasses() } >{this.formatCount()}</span>
-            <Button  
-            onClick={() => this.handleIncrement("product")} 
-            variant="dark m-2 " size="md"
-            >
-            Increment
-            </Button>
+            <button className="btn btn-dark btn-lg m-2" onClick={this.handleIncrement} >Increment</button>
+            <button className="btn btn-danger btn-lg m-2" onClick={this.props.onDelete} >Delete</button>
             {/* {this.state.tags.length === 0  && <Alert variant="info m-2  " > <h3>Please Create a new tags!!</h3> </Alert>} 
             <Alert variant="danger m-2  " > {this.renderTags()} </Alert>  */}
             
