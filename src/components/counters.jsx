@@ -8,8 +8,9 @@ class Counters extends Component {
         { id:4,value:0}
     ]  };
 
-    handleDelete = () => {
-        console.log("Event Handler Called");
+    handleDelete = counterId => {
+        const counter = this.state.counter.filter(c => c.id !== counterId );
+        this.setState({counter});
         
     };
     render() { 
