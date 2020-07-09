@@ -10,7 +10,7 @@ function App() {
     <main className="container">
       <Counters/>
     </main>
-    </React.Fragment>
+    </React.Fragment> 
   );
 }
 

@@ -34,7 +34,7 @@ class Counters extends Component {
     render() { 
         return ( 
             <div>
-            <button className="btn btn-primary btn-sm btn-m2" 
+            <button className="btn btn-primary btn-lg m2" 
             onClick={this.handleReset} 
             >Reset
             </button>
