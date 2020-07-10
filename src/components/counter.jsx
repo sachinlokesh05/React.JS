@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 
 class Counter extends Component {
     render() {                 
+        console.log(" Counter - Rendered ");
+
         return (<React.Fragment>
             <h1>{this.props.counter.id}</h1>
             <span style={ {fontSize:20 }} className={this.getBadgeClasses() } >{this.formatCount()}</span>
